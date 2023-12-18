@@ -1,19 +1,23 @@
+
 //    1
-//   121
-//  12321
-// 1234321
+//   232
+//  34543
+// 4567654
+   
 
 let str='';
+let k = 4;
+let n = 0;
 for(let i = 1; i<=4; i++) {
-    let num = 1;
     for(let j = 1; j<=7; j++) {
-        if(j >=5-i && j<=3+i){
-            str +=num;
-            j < 4 ? num++ : num--;
+        if(j >= k && j <=  3 + i ) {
+            j <= 4 ? n++: n--;
+            str += n;
         } else {
             str +=' ';
         }
     }
+    k--;
     str +="\n";
 }
 console.log(str);
