@@ -1,25 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 // import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
 // import CustomCase from "./customCaseComponent/CustomCase";
 // import CustomSwitch from "./customCaseComponent/CustomSwitch";
 // import DefaultCase from "./customCaseComponent/DefaultCase";
 
-import { FeatureFlagProvider, FeatureFlag } from './FeatureFlag/FeatureFlag';
+import { FeatureFlagProvider, FeatureFlag } from "./FeatureFlag/FeatureFlag";
+import UseWhyDidYouUpdate from "./UseWhyDidYouUpdate";
 
 const Example = () => {
-  return <h1>
-    <Feature feature="isGooglePayEnable" value={true}>Google</Feature>
-    <Feature feature="isAmazonPayEnable" value={false}>Apple</Feature>
-  </h1>
-}
+  return (
+    <h1>
+      <Feature feature="isGooglePayEnable" value={true}>
+        Google
+      </Feature>
+      <Feature feature="isAmazonPayEnable" value={false}>
+        Apple
+      </Feature>
+    </h1>
+  );
+};
 
-const Feature = ({feature, children, value}) => {
+const Feature = ({ feature, children, value }) => {
   const { features } = React.useContext(FeatureFlag);
   return features[feature] ? children : null;
-}
+};
+
+const ExampleUpdate = (props) => {
+  UseWhyDidYouUpdate("Example", props);
+  return <div>{props.count}</div>;
+};
 
 function App() {
+  const [count, setCount] = useState(0);
+  const onFn = () => {
+
+  }
   return (
     // <>
     //   <CustomSwitch value="100">
@@ -33,9 +49,13 @@ function App() {
 
     // <InfiniteScroll />
 
-    <FeatureFlagProvider>
-      <Example />
-    </FeatureFlagProvider>
+    // <FeatureFlagProvider>
+    //   <Example />
+    // </FeatureFlagProvider>
+    <>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <ExampleUpdate onFn={onFn}/>
+    </>
   );
 }
 
