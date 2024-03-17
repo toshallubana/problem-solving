@@ -1,0 +1,59 @@
+.container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.inputWrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.adddButton {
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+.input {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #000;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid green;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.close {
+    cursor: pointer;
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+.items:hover .close {
+    opacity: 1;
+}
+
+.strike {
+    text-decoration: line-through;
+}

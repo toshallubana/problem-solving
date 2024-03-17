@@ -39,7 +39,6 @@ const Stepper = ({ list }) => {
         </div>
       </div>
       <div>{React.cloneElement(list[currentStep], {onPrev, onNext})}</div>
-
     </section>
   );
 };

@@ -8,6 +8,7 @@ import "./App.css";
 import { FeatureFlagProvider, FeatureFlag } from "./FeatureFlag/FeatureFlag";
 import UseWhyDidYouUpdate from "./UseWhyDidYouUpdate";
 import Stepper from "./Stepper";
+import TodoList from "./Todolist";
 
 // const Example = () => {
 //   return (
@@ -86,6 +87,7 @@ function App() {
   };
 
   const list = [<Example1 />, <Example2 />, <Example3 />, <Example4 />];
+
   return (
     // <>
     //   <CustomSwitch value="100">
@@ -107,9 +109,11 @@ function App() {
     //   <ExampleUpdate onFn={onFn}/>
     // </>
 
-    <>
-      <Stepper list={list} />
-    </>
+    // <>
+    //   <Stepper list={list} />
+    // </>
+
+    <TodoList />
   );
 }
 
